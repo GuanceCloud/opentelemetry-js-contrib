@@ -1,4 +1,4 @@
-# `@opentelemetry/profiler-nodejs`
+# `@cloudcare/profiler-nodejs`
 
 This package provides a practical Node.js profiling bridge for OpenTelemetry
 users. It is not an implementation of the OpenTelemetry Profiles signal.
@@ -17,7 +17,7 @@ This package is experimental.
 ## Installation
 
 ```sh
-npm install @opentelemetry/profiler-nodejs @datadog/pprof
+npm install @cloudcare/profiler-nodejs @datadog/pprof
 ```
 
 See [USAGE.md](./USAGE.md) for a short module overview, configuration options,
@@ -35,7 +35,7 @@ import {
 import {
   DatakitProfilingExporter,
   NodeProfiling,
-} from '@opentelemetry/profiler-nodejs';
+} from '@cloudcare/profiler-nodejs';
 
 const profiler = new NodeProfiling({
   resource: resourceFromAttributes({

@@ -1,6 +1,6 @@
 # Node.js Profiler Module
 
-`@opentelemetry/profiler-nodejs` is a practical profiling bridge for Node.js.
+`@cloudcare/profiler-nodejs` is a practical profiling bridge for Node.js.
 It collects profiles with `@datadog/pprof`, maps OpenTelemetry resource data to
 profiling tags, and uploads profiles to a backend such as DataKit.
 
@@ -34,7 +34,7 @@ import {
 import {
   DatakitProfilingExporter,
   NodeProfiling,
-} from '@opentelemetry/profiler-nodejs';
+} from '@cloudcare/profiler-nodejs';
 
 const profiler = new NodeProfiling({
   resource: resourceFromAttributes({
