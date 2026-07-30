@@ -18,6 +18,7 @@
   - Metric：`/otel/v1/metrics`
   - Profile：`/profiling/v1/input`
 - 配套材料：可参考随文提供的 `guance-nodejs-demo` 示例工程
+- Git 地址：`https://github.com/GuanceCloud/opentelemetry-js-contrib/tree/codex/upstream-profiler-nodejs/examples/guance-nodejs-demo`
 
 ## 准备工作
 
