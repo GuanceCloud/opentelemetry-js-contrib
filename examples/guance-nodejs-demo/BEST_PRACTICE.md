@@ -17,7 +17,7 @@
   - Trace：`/otel/v1/traces`
   - Metric：`/otel/v1/metrics`
   - Profile：`/profiling/v1/input`
-- Demo 目录：[examples/guance-nodejs-demo](/home/liurui/code/opentelemetry-js-contrib/examples/guance-nodejs-demo/package.json:1)
+- 配套材料：可参考随文提供的 `guance-nodejs-demo` 示例工程
 
 ## 准备工作
 
@@ -132,7 +132,7 @@ datakit monitor
 推荐直接跑 demo：
 
 ```bash
-cd examples/guance-nodejs-demo
+# 进入 guance-nodejs-demo 示例目录
 npm install
 OTEL_DIAG_LEVEL=DEBUG npm run demo
 ```
