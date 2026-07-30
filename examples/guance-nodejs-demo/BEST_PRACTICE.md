@@ -19,6 +19,65 @@
   - Profile：`/profiling/v1/input`
 - Demo 目录：[examples/guance-nodejs-demo](/home/liurui/code/opentelemetry-js-contrib/examples/guance-nodejs-demo/package.json:1)
 
+## 准备工作
+
+在跑 demo 或接入业务应用前，先把 DataKit 侧两个采集器打开：
+
+### 1. 开启 OpenTelemetry 采集器
+
+进入 DataKit 安装目录：
+
+```bash
+cd /usr/local/datakit/conf.d/opentelemetry
+cp opentelemetry.conf.sample opentelemetry.conf
+```
+
+确认 HTTP 接口已开启，至少包含：
+
+```toml
+[[inputs.opentelemetry]]
+
+  [inputs.opentelemetry.http]
+    trace_api = "/otel/v1/traces"
+    metric_api = "/otel/v1/metrics"
+```
+
+### 2. 开启 Profile 采集器
+
+进入 DataKit 安装目录：
+
+```bash
+cd /usr/local/datakit/conf.d/profile
+cp profile.conf.sample profile.conf
+```
+
+确认 Profile 接口已开启：
+
+```toml
+[[inputs.profile]]
+  endpoints = ["/profiling/v1/input"]
+```
+
+### 3. 重启 DataKit
+
+```bash
+datakit service -R
+```
+
+然后用下面命令确认采集器已生效：
+
+```bash
+datakit monitor
+```
+
+### 4. 如果应用不在 DataKit 本机
+
+如果应用和 DataKit 不在同一台机器，除了端口可达，还要确认 DataKit 已允许外部访问这些接口：
+
+- `/otel/v1/traces`
+- `/otel/v1/metrics`
+- `/profiling/v1/input`
+
 ## 实现目标
 
 推荐先达成下面三个目标，再考虑细节优化：
